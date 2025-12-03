@@ -19,7 +19,9 @@ except ImportError:
 # ==========================
 # OpenAI Client
 # ==========================
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+import os
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 MODEL = "gpt-5-mini"
 
 st.set_page_config(page_title="Scopus Outlet & SDG Recommender", layout="wide")
